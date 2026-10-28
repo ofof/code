@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Todo API</title>
+<style>
+  :root { color-scheme: light dark; }
+  body { font-family: system-ui, sans-serif; max-width: 760px; margin: 40px auto; padding: 0 16px; line-height: 1.55; }
+  code { background: rgba(127,127,127,.15); padding: 2px 5px; border-radius: 4px; }
+  pre { background: rgba(127,127,127,.15); padding: 12px; border-radius: 6px; overflow-x: auto; }
+  img { max-width: 100%; border: 1px solid rgba(127,127,127,.4); border-radius: 6px; }
+  .note { border-left: 4px solid #1a73e8; padding: 8px 12px; background: rgba(26,115,232,.08); }
+</style>
+</head>
+<body>
+<h1>Todo API</h1>
+<p>A small <a href="https://fastapi.tiangolo.com/">FastAPI</a> service providing CRUD endpoints for todos. Data is kept in memory (swap in a real database for production).</p>
+<p class="note">This page is documentation only. The API itself is not hosted here; run it locally with the steps below. Source code: <a href="https://github.com/ofof/code">github.com/ofof/code</a>.</p>
+
+<h2>Endpoints</h2>
+<ul>
+  <li><code>GET /todos</code> – list todos, optional <code>?done=true|false</code> filter</li>
+  <li><code>POST /todos</code> – create a todo</li>
+  <li><code>GET /todos/{id}</code>, <code>PUT /todos/{id}</code>, <code>DELETE /todos/{id}</code></li>
+  <li>Interactive Swagger UI at <code>/docs</code></li>
+</ul>
+
+<h2>Run locally</h2>
+<pre><code>pip install -r requirements.txt
+uvicorn main:app --reload</code></pre>
+<p>Then open <code>http://127.0.0.1:8000/docs</code>.</p>
+
+<h2>Test</h2>
+<pre><code>pip install pytest httpx
+pytest</code></pre>
+
+<h2>Screenshot</h2>
+<img src="screenshot.png" alt="Swagger UI of the Todo API">
+<script src="meeting-reminder.js"></script>
+</body>
+</html>
