@@ -7,7 +7,7 @@ Publish this project to the GitHub repo given in `$ARGUMENTS`. If it is empty, a
 
 ## 0. Preflight
 - Normalise the repo to `owner/name`. Confirm `git` is initialised and an identity is set (`git config user.name` / `user.email`); if not, ask the user for them. Never invent an email.
-- Check `gh auth status`. If `gh` is missing or not logged in, stop and tell the user to install it and run `gh auth login` themselves. Never ask for, accept or type a password or token, and never put credentials in a remote URL.
+- Check `gh auth status` (if `gh` is not on PATH, try `~/.local/bin/gh`). If pushes over HTTPS cannot authenticate even though `gh` is logged in, run `gh auth setup-git`. If `gh` is missing or not logged in, stop and tell the user to install it and run `gh auth login` themselves. Never ask for, accept or type a password or token, and never put credentials in a remote URL.
 - Check whether the repo exists (`gh repo view`). If it does not, ask before creating it, and ask whether it should be public or private.
 
 ## 1. Make sure nothing sensitive goes online (do this before any push)
